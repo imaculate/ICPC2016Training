@@ -30,7 +30,11 @@ public class Main{
          }
       }*/
       table[0][0] = 1;
-      for(int n = 1; n<=1120; n++){
+       for(int i=0;i<res.length;i++)
+        for(j=1120;j>=res[i];j--)
+            for(int k=1;k<15;k++)
+               table[j][k]+=table[j-res[i]][k-1];
+      /*for(int n = 1; n<=1120; n++){
          for(int k = 1; k<=14; k++){
             
            for(int i = 0; i< res.length; i++){
@@ -39,7 +43,7 @@ public class Main{
                 }
            }
          }
-      }
+      }*/
       
       String next = scanner.nextLine();
       int N = 0; 
