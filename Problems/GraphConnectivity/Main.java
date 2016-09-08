@@ -10,13 +10,15 @@ public class Main{
       for(int t = 0; t<T; t++){
          String line = k.nextLine();
          
-         //int n = line.charAt(0)+ 1 - 'A';
+         char end = line.charAt(0);
+        // char max = 'A';
          line = k.nextLine();
          ArrayList<Graph> graphs = new ArrayList<Graph>();
          while(!line.equals("")){
             char a  = line.charAt(0);
+           // max = (a>max)?a:max;
             char b = line.charAt(1);
-            
+            //max = (b>max)?b:max;
             int A = -1;
             for(int  i = 0; i< graphs.size(); i++){
                Graph g = graphs.get(i);
@@ -64,7 +66,27 @@ public class Main{
             line = k.nextLine();
          }
          
-         System.out.println(graphs.size());
+         //if end not contained in graphs add one 
+         int result = 0;
+         //for(int j = max+1; j<= end;j++){
+         int A = -1;
+         for(int  i = 0; i< graphs.size(); i++){
+            Graph g = graphs.get(i);
+            if(g.points.indexOf(end)>-1){
+               A = i;
+               break;
+            }
+                
+         }
+         if(A==-1)
+            result+=1;
+         
+         //}  
+            
+         result+= graphs.size();
+         System.out.println(result);
+         System.out.println();
+         
          
           
       }
