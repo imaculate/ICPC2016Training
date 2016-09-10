@@ -13,7 +13,7 @@ public class Main{
          if (isPrime[i]) primes++;
       }
         
-      System.out.println(primes);
+      //System.out.println(primes);
       int[] res = new int[primes];
       int j = 0;
       for (int i = 2; i <= 1120; i++) {
